@@ -6,7 +6,7 @@ const Footer = () => (
         href='https://digitalinspiration.com/'
         className='text-cyan-600 no-underline hover:text-cyan-700'
       >
-        Amit Agarwal &rarr;
+        Sanjay Bharti &rarr;
       </a>
     </p>
   </div>

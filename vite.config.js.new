@@ -1,0 +1,24 @@
+import tailwindcssPlugin from '@tailwindcss/vite';
+import viteReactPlugin from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import { viteSingleFile } from 'vite-plugin-singlefile';
+import { fileURLToPath, URL } from 'node:url';
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/styles', import.meta.url))
+    }
+  },
+  build: {
+    reportCompressedSize: false,
+    commonjsOptions: { transformMixedEsModules: true },
+  },
+  plugins: [
+    tailwindcssPlugin(),
+    viteReactPlugin(),
+    process.env.INLINE ? viteSingleFile() : null,
+  ].filter(Boolean),
+});

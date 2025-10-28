@@ -1,7 +1,4 @@
-@import 'tailwindcss';
-
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
-
-@import './styles.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
